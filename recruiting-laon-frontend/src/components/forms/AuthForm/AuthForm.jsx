@@ -163,18 +163,25 @@ const AuthForm = ({ type }) => {
               {errors.email && <div className={styles.errorMessage}>{errors.email}</div>}
             </div>
             
-            <div className="mb-3 position-relative">
-              <input
-                type={showPassword ? 'text' : 'password'}
-                name="password"
-                className={`${styles.formInput} ${errors.password ? styles.inputError : ''}`}
-                placeholder="Senha"
-                value={formData.password}
-                onChange={handleChange}
-              />
-              <button type="button" className={styles.passwordToggle} onClick={() => setShowPassword(!showPassword)}>
-                <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
-              </button>
+            <div className="mb-3"> 
+              <div className="position-relative"> 
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  name="password"
+                  className={`${styles.formInput} ${errors.password ? styles.inputError : ''}`}
+                  placeholder="Senha"
+                  value={formData.password}
+                  onChange={handleChange}
+                />
+                <button 
+                  type="button" 
+                  className={styles.passwordToggle}
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
+                </button>
+              </div>
+
               {errors.password && <div className={styles.errorMessage}>{errors.password}</div>}
             </div>
 

@@ -128,12 +128,19 @@
 .passwordToggle {
   position: absolute;
   top: 50%;
-  right: 1rem;
+  right: 15px;
   transform: translateY(-50%);
+
   background: none;
   border: none;
-  color: var(--color-gray-400);
+  padding: 0;
   cursor: pointer;
+  color: var(--color-gray-400);
+  line-height: 1;
+}
+
+.passwordToggle:hover {
+  color: var(--color-white);
 }
 
 .termsText {

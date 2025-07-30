@@ -1,0 +1,183 @@
+.authPage {
+  background-color: color-mix(in srgb, var(--color-primary-dark) 1%, var(--color-gray-100));
+  color: var(--color-white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.authHeader {
+  padding: 1.5rem 5%;
+  border-bottom: 1px solid var(--color-gray-300);
+}
+
+.logoContainer {
+  text-decoration: none;
+  gap: 12px;
+}
+
+.logoSymbol {
+  flex-shrink: 0; 
+}
+
+.logoTextContainer {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+}
+
+.logoText {
+  font-family: var(--font-family-inter);
+  font-weight: var(--font-weight-semibold);
+  font-size: 24px;
+  color: var(--color-white);
+  line-height: 1; 
+}
+
+.logoSubtext {
+  font-family: var(--font-family-inter);
+  font-weight: var(--font-weight-regular);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--color-gray-400);
+  line-height: 1;
+}
+
+.navLink {
+  color: var(--color-white);
+  text-decoration: none;
+  font-family: var(--font-family-inter);
+  font-weight: var(--font-weight-semibold);
+  font-size: 14px;
+  transition: color 0.2s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 150px; 
+  display: flex;
+  align-items: center;
+}
+
+.navLinkRight {
+  justify-content: flex-end;
+}
+
+.navLink:hover .iconWrapper {
+  border-color: var(--color-primary-default);
+}
+
+.navLink:hover {
+  color: var(--color-primary-default);
+}
+
+.navLink:hover {
+  color: var(--color-primary-default);
+}
+
+.formContainer {
+  background-color: color-mix(in srgb, var(--color-primary-default) 2%, var(--color-gray-200));
+  padding: 2.5rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.formTitle {
+  font-family: var(--font-family-inter);
+  font-weight: var(--font-weight-semibold);
+  font-size: 24px;
+  line-height: 30px;
+  color: var(--color-white);
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.formSubtitle {
+  font-family: var(--font-family-inter);
+  font-weight: var(--font-weight-regular);
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-gray-500);
+  text-align: left;
+}
+
+.formInput {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid var(--color-gray-400);
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  color: var(--color-white);
+  font-size: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formInput::placeholder {
+  color: var(--color-gray-400);
+}
+
+.formInput:focus {
+  background-color: transparent;
+  color: var(--color-white);
+  outline: none;
+  border-color: var(--color-primary-default);
+  box-shadow: 0 0 0 2px rgba(62, 189, 228, 0.25);
+}
+
+.passwordToggle {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-gray-400);
+  cursor: pointer;
+}
+
+.termsText {
+  font-size: 12px;
+  color: var(--color-gray-500);
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.submitButton {
+  width: 100%;
+  background-color: var(--color-white);
+  color: var(--color-gray-100);
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  font-size: 16px;
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submitButton:hover {
+  background-color: #f0f0f0;
+}
+
+.submitButton:disabled {
+  background-color: var(--color-gray-400);
+  cursor: not-allowed;
+}
+
+.inputError {
+  border-color: var(--color-feedback-negative);
+}
+
+.inputError:focus {
+  border-color: var(--color-feedback-negative);
+  box-shadow: 0 0 0 2px rgba(196, 46, 62, 0.25);
+}
+
+.errorMessage {
+  color: var(--color-feedback-negative);
+  font-size: 12px;
+  margin-top: 6px;
+}
+

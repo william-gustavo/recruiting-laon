@@ -1,0 +1,34 @@
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  /* A margem de 120px é muito grande para telas menores. Usamos padding. */
+  padding-left: 24px; /* Padding para mobile */
+  padding-right: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px; /* Gutter */
+}
+
+@media (min-width: 1440px) {
+  .container {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
+
+.colSpan1 { grid-column: span 1; }
+.colSpan2 { grid-column: span 2; }
+.colSpan3 { grid-column: span 3; }
+.colSpan4 { grid-column: span 4; }
+.colSpan5 { grid-column: span 5; }
+.colSpan6 { grid-column: span 6; }
+.colSpan7 { grid-column: span 7; }
+.colSpan8 { grid-column: span 8; }
+.colSpan9 { grid-column: span 9; }
+.colSpan10 { grid-column: span 10; }
+.colSpan11 { grid-column: span 11; }
+.colSpan12 { grid-column: span 12; }

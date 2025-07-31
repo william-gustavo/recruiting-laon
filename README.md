@@ -20,8 +20,8 @@ Bem-vindo ao Laon Streaming! Este é um projeto Full Stack que consiste em uma A
 
 A aplicação permite que usuários se cadastrem, façam login, naveguem por um catálogo de filmes e séries, visualizem detalhes de cada item e façam logout de forma segura.
 
-- **Backend:** Uma API robusta com Laravel 8, utilizando Sanctum para autenticação baseada em token.
-- **Frontend:** Uma interface de usuário dinâmica e responsiva com Next.js 14 (App Router), utilizando Context API para gerenciamento de estado global.
+- **Backend:** Uma API com Laravel 8, utilizando Sanctum para autenticação baseada em token.
+- **Frontend:** Uma interface de usuário dinâmica e responsiva com Next.js 15 (App Router), utilizando Context API para gerenciamento de estado global.
 
 ---
 

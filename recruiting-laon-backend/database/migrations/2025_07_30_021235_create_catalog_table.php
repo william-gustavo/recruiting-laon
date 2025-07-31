@@ -4,11 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateItemsTable extends Migration
+class CreateCatalogTable extends Migration
 {
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
+        Schema::create('catalogs', function (Blueprint $table) {
             $table->id();
             $table->enum('type', ['movie', 'series']); // Diferencia filme de série
             $table->string('title'); // Título principal (ex: "Bela Vingança")
@@ -30,6 +30,6 @@ class CreateItemsTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('catalogs');
     }
 }

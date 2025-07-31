@@ -14,16 +14,16 @@ class Person extends Model
     /**
      * Define os itens que esta pessoa dirigiu.
      */
-    public function directedItems()
+    public function directedCatalogs()
     {
-        return $this->hasMany(Item::class, 'director_id');
+        return $this->hasMany(Catalog::class, 'director_id');
     }
 
     /**
      * Define os itens em que esta pessoa atuou (elenco).
      */
-    public function itemsAsCast()
+    public function catalogsAsCast()
     {
-        return $this->belongsToMany(Item::class, 'item_person');
+        return $this->belongsToMany(Catalog::class, 'catalog_person');
     }
 }

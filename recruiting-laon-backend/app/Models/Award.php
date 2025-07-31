@@ -14,8 +14,8 @@ class Award extends Model
     /**
      * Define os itens que ganharam este prêmio.
      */
-    public function items()
+    public function catalogs()
     {
-        return $this->belongsToMany(Item::class, 'item_award');
+        return $this->belongsToMany(Catalog::class, 'catalog_award');
     }
 }

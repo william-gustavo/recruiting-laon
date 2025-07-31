@@ -10,7 +10,7 @@ class CreateRatingsTable extends Migration
     {
         Schema::create('ratings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('item_id')->constrained()->onDelete('cascade');
+            $table->foreignId('catalog_id')->constrained()->onDelete('cascade');
             $table->string('source'); // Ex: "IMDb", "Rotten Tomatoes"
             $table->string('score'); // Ex: "7.5", "90%"
             $table->timestamps();

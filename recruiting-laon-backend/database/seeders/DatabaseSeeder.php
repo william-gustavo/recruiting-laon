@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             GenreSeeder::class,
             PersonSeeder::class,
             AwardSeeder::class,
-            ItemSeeder::class
+            CatalogSeeder::class
         ]);
     }
 }

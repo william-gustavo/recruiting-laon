@@ -92,7 +92,6 @@ const AuthForm = ({ type }) => {
 
   return (
     <div className={styles.authPage}>
-      {/* Header */}
       <header className={`${styles.authHeader} container-fluid`}>
         <div className="d-flex justify-content-between align-items-center">
           <button onClick={() => router.back()} className={`${styles.navLink} d-flex align-items-center`}>
@@ -121,8 +120,7 @@ const AuthForm = ({ type }) => {
           </Link>
         </div>
       </header>
-
-      {/* Formulário Central */}
+      
       <main className="d-flex justify-content-center align-items-center flex-grow-1">
         <div className={styles.formContainer}>
           <div className="text-center mb-4">

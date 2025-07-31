@@ -14,8 +14,8 @@ class Genre extends Model
     /**
      * Define os itens (filmes/séries) que pertencem a este gênero.
      */
-    public function items()
+    public function catalogs()
     {
-        return $this->belongsToMany(Item::class, 'item_genre');
+        return $this->belongsToMany(Catalog::class, 'catalog_genre');
     }
 }

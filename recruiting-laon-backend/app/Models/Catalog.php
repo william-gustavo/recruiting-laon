@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Item extends Model
+class Catalog extends Model
 {
     use HasFactory;
     protected $guarded = [];
@@ -15,15 +15,15 @@ class Item extends Model
     }
 
     public function cast() {
-        return $this->belongsToMany(Person::class, 'item_person');
+        return $this->belongsToMany(Person::class, 'catalog_person');
     }
 
     public function genres() {
-        return $this->belongsToMany(Genre::class, 'item_genre');
+        return $this->belongsToMany(Genre::class, 'catalog_genre');
     }
 
     public function awards() {
-        return $this->belongsToMany(Award::class, 'item_award');
+        return $this->belongsToMany(Award::class, 'catalog_award');
     }
 
     public function ratings() {

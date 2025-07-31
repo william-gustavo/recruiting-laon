@@ -3,11 +3,12 @@ import { AuthProvider } from '../contexts/AuthContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import { LoadingProvider } from '../contexts/LoadingContext';
+import LoadingSetup from '../components/LoadingSetup';
 config.autoAddCss = false;
 
 export const metadata = {
-  title: 'Sistema de Autenticação',
-  description: 'Next.js 15 com Laravel Sanctum',
+  title: 'Laon Streaming'
 };
 
 export default function RootLayout({ children }) {
@@ -15,7 +16,10 @@ export default function RootLayout({ children }) {
     <html lang="pt-BR">
       <body>
         <AuthProvider>
-          {children}
+          <LoadingProvider>
+            <LoadingSetup />
+            {children}
+          </LoadingProvider>
         </AuthProvider>
       </body>
     </html>

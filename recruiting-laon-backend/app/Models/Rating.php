@@ -14,8 +14,8 @@ class Rating extends Model
     /**
      * Define o item ao qual esta avaliação pertence.
      */
-    public function item()
+    public function catalogs()
     {
-        return $this->belongsTo(Item::class);
+        return $this->belongsTo(Catalog::class);
     }
 }

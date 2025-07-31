@@ -1,5 +1,13 @@
 import axios from 'axios';
 
+let showLoaderFn = () => {};
+let hideLoaderFn = () => {};
+
+export const setLoadingHooks = (show, hide) => {
+  showLoaderFn = show;
+  hideLoaderFn = hide;
+};
+
 // Função para obter o token CSRF do cookie
 const getCsrfTokenFromCookie = () => {
   if (typeof document === 'undefined') return null;
@@ -34,27 +42,38 @@ const csrfClient = axios.create({
   },
 });
 
-api.interceptors.request.use((config) => {
-  if (typeof window !== 'undefined') {
+api.interceptors.request.use(
+  (config) => {
+    showLoaderFn(); 
+    if (typeof window !== 'undefined') {
 
-    const token = localStorage.getItem('token');
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
+      const token = localStorage.getItem('token');
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
 
-    if (['post', 'put', 'patch', 'delete'].includes(config.method.toLowerCase())) {
-      const csrfToken = getCsrfTokenFromCookie();
-      if (csrfToken) {
-        config.headers['X-XSRF-TOKEN'] = csrfToken;
+      if (['post', 'put', 'patch', 'delete'].includes(config.method.toLowerCase())) {
+        const csrfToken = getCsrfTokenFromCookie();
+        if (csrfToken) {
+          config.headers['X-XSRF-TOKEN'] = csrfToken;
+        }
       }
     }
+    return config;
+  },
+  (error) => {
+    hideLoaderFn(); 
+    return Promise.reject(error);
   }
-  return config;
-});
+);
 
 api.interceptors.response.use(
-  (response) => response,
+  (response) => {
+    hideLoaderFn();
+    return response;
+  },
   (error) => {
+    hideLoaderFn();
     if (
       error.response?.status === 401 &&
       typeof window !== 'undefined' &&

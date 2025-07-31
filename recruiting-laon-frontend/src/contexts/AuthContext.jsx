@@ -88,7 +88,7 @@ export const AuthProvider = ({ children }) => {
         }
       });
 
-      router.push('/dashboard'); 
+      router.push('/catalog'); 
       
       return data;
     } catch (error) {
@@ -109,7 +109,7 @@ export const AuthProvider = ({ children }) => {
         payload: { user: data.user, token: data.token }
       });
       
-      router.push('/dashboard');
+      router.push('/catalog');
       return data;
     } catch (error) {
       let errorMessage = 'Ocorreu um erro no registro.';

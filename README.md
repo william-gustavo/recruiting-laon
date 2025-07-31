@@ -48,9 +48,9 @@ A aplicação permite que usuários se cadastrem, façam login, naveguem por um 
 
 Antes de começar, certifique-se de que você tem os seguintes softwares instalados na sua máquina:
 
-- **PHP** (versão 8.1 ou superior)
+- **PHP** (versão 7.3 ou superior)
 - **Composer**
-- **Node.js** (versão 20 ou superior)
+- **Node.js** (versão 18 ou superior)
 - **NPM**
 - Um servidor de banco de dados **MySQL**
 

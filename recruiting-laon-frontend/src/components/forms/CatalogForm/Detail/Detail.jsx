@@ -65,7 +65,9 @@ export default function Detail() {
               src={item.poster_url}
               alt={`Pôster de ${item.title}`}
               fill
+              priority
               className={styles.posterImage}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33 vw"
             />
           </div>
           {item.trailer_url && (

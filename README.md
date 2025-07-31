@@ -1,6 +1,6 @@
 # Laon Streaming - Plataforma de Catálogo de Filmes e Séries
 
-Bem-vindo ao Laon Streaming! Este é um projeto Full Stack que consiste em uma API RESTful construída com Laravel (backend) e uma aplicação moderna e reativa construída com Next.js (frontend).
+Bem-vindo ao Laon Streaming! Este é um projeto Full Stack que consiste em uma API construída com Laravel (backend) e uma aplicação construída com Next.js (frontend).
 
 ## Índice
 
@@ -20,8 +20,8 @@ Bem-vindo ao Laon Streaming! Este é um projeto Full Stack que consiste em uma A
 
 A aplicação permite que usuários se cadastrem, façam login, naveguem por um catálogo de filmes e séries, visualizem detalhes de cada item e façam logout de forma segura.
 
-- **Backend:** Uma API robusta com Laravel 8, utilizando Sanctum para autenticação baseada em token.
-- **Frontend:** Uma interface de usuário dinâmica e responsiva com Next.js 14 (App Router), utilizando Context API para gerenciamento de estado global.
+- **Backend:** Uma API com Laravel 8, utilizando Sanctum para autenticação baseada em token.
+- **Frontend:** Uma interface de usuário dinâmica e responsiva com Next.js 15 (App Router), utilizando Context API para gerenciamento de estado global.
 
 ---
 
@@ -51,8 +51,8 @@ Antes de começar, certifique-se de que você tem os seguintes softwares instala
 - **PHP** (versão 8.1 ou superior)
 - **Composer**
 - **Node.js** (versão 20 ou superior)
-- **NPM** ou **Yarn**
-- Um servidor de banco de dados **MySQL** (ou um ambiente como XAMPP, WAMP, Laragon, Docker)
+- **NPM**
+- Um servidor de banco de dados **MySQL**
 
 ---
 
@@ -132,10 +132,6 @@ Usando NPM:
 ```bash
 npm install
 ```
-Ou usando Yarn:
-```bash
-yarn install
-```
 
 **b. Configurar Variáveis de Ambiente**
 Crie um arquivo chamado `.env.local` na raiz da pasta `recruiting-laon-frontend` e adicione a URL da sua API backend.
@@ -152,10 +148,6 @@ Usando NPM:
 ```bash
 npm run dev
 ```
-Ou usando Yarn:
-```bash
-yarn dev
-```
 
 **Pronto!** Agora você pode abrir `http://localhost:3000` no seu navegador para ver a aplicação funcionando.
 
@@ -163,10 +155,19 @@ yarn dev
 
 ## Estrutura de Pastas
 
-O projeto está organizado em um monorepo com duas pastas principais:
+O projeto está organizado em duas pastas principais:
 
 - **/recruiting-laon-backend**: Contém a aplicação Laravel (API ).
 - **/recruiting-laon-frontend**: Contém a aplicação Next.js (Cliente).
+
+---
+
+## Documentação
+
+A pasta `/docs` na raiz do projeto contém artefatos importantes para entender a arquitetura da aplicação:
+
+- **Coleção da API:** Um arquivo JSON que pode ser importado em clientes de API como Insomnia ou Postman para testar todos os endpoints.
+- **Diagrama Entidade-Relacionamento (DER):** Uma imagem do diagrama do banco de dados, mostrando as tabelas e seus relacionamentos.
 
 ---
 

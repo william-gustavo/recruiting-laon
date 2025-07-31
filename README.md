@@ -1,6 +1,6 @@
 # Laon Streaming - Plataforma de Catálogo de Filmes e Séries
 
-Bem-vindo ao Laon Streaming! Este é um projeto Full Stack que consiste em uma API RESTful construída com Laravel (backend) e uma aplicação moderna e reativa construída com Next.js (frontend).
+Bem-vindo ao Laon Streaming! Este é um projeto Full Stack que consiste em uma API construída com Laravel (backend) e uma aplicação construída com Next.js (frontend).
 
 ## Índice
 

@@ -170,6 +170,15 @@ O projeto está organizado em um monorepo com duas pastas principais:
 
 ---
 
+## Documentação
+
+A pasta `/docs` na raiz do projeto contém artefatos importantes para entender a arquitetura da aplicação:
+
+- **Coleção da API:** Um arquivo JSON que pode ser importado em clientes de API como Insomnia ou Postman para testar todos os endpoints.
+- **Diagrama Entidade-Relacionamento (DER):** Uma imagem DO diagrama do banco de dados, mostrando as tabelas e seus relacionamentos.
+
+---
+
 ## Endpoints da API
 
 As principais rotas da API estão definidas em `recruiting-laon-backend/routes/api.php`.

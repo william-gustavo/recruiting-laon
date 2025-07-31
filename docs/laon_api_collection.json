@@ -1,0 +1,200 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-07-31T10:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_laon_streaming",
+      "parentId": null,
+      "modified": 1690800000000,
+      "created": 1690800000000,
+      "name": "Laon Streaming API",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "fld_auth_public",
+      "parentId": "wrk_laon_streaming",
+      "modified": 1690800000000,
+      "created": 1690800000000,
+      "name": "Auth - Public",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -100,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_login",
+      "parentId": "fld_auth_public",
+      "modified": 1690800000000,
+      "created": 1690800000000,
+      "url": "{{ base_url }}/api/auth/login",
+      "name": "Login",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"user@example.com\",\n\t\"password\": \"password\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "Accept", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": 0,
+      "_type": "request"
+    },
+    {
+      "_id": "req_register",
+      "parentId": "fld_auth_public",
+      "modified": 1690800000000,
+      "created": 1690800000000,
+      "url": "{{ base_url }}/api/auth/register",
+      "name": "Register",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Test User\",\n\t\"email\": \"test@example.com\",\n\t\"password\": \"password123\",\n\t\"password_confirmation\": \"password123\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "Accept", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": 1,
+      "_type": "request"
+    },
+    {
+      "_id": "fld_auth_protected",
+      "parentId": "wrk_laon_streaming",
+      "modified": 1690800000000,
+      "created": 1690800000000,
+      "name": "Auth - Protected",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -50,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_get_user",
+      "parentId": "fld_auth_protected",
+      "modified": 1690800000000,
+      "created": 1690800000000,
+      "url": "{{ base_url }}/api/auth/user",
+      "name": "Get Authenticated User",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [{ "name": "Accept", "value": "application/json" }],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": 0,
+      "_type": "request"
+    },
+    {
+      "_id": "req_logout",
+      "parentId": "fld_auth_protected",
+      "modified": 1690800000000,
+      "created": 1690800000000,
+      "url": "{{ base_url }}/api/auth/logout",
+      "name": "Logout",
+      "description": "",
+      "method": "POST",
+      "body": {},
+      "parameters": [],
+      "headers": [{ "name": "Accept", "value": "application/json" }],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": 1,
+      "_type": "request"
+    },
+    {
+      "_id": "fld_catalog",
+      "parentId": "wrk_laon_streaming",
+      "modified": 1690800000000,
+      "created": 1690800000000,
+      "name": "Catalog",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": 0,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_get_catalog",
+      "parentId": "fld_catalog",
+      "modified": 1690800000000,
+      "created": 1690800000000,
+      "url": "{{ base_url }}/api/catalog",
+      "name": "Get Catalog List",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [{ "name": "Accept", "value": "application/json" }],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": 0,
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_catalog_item",
+      "parentId": "fld_catalog",
+      "modified": 1690800000000,
+      "created": 1690800000000,
+      "url": "{{ base_url }}/api/catalog/1",
+      "name": "Get Catalog Item by ID",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [{ "name": "Accept", "value": "application/json" }],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": 1,
+      "_type": "request"
+    },
+    {
+      "_id": "env_laon_base",
+      "parentId": "wrk_laon_streaming",
+      "modified": 1690800000000,
+      "created": 1690800000000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8000"
+      },
+      "dataPropertyOrder": {
+        "&": [ "base_url" ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1690800000000,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_laon_cookie",
+      "parentId": "wrk_laon_streaming",
+      "modified": 1690800000000,
+      "created": 1690800000000,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    }
+  ]
+}
